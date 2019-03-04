@@ -10,12 +10,40 @@
     
     <h1>Just Like Hangman</h1>
     <h2>Try to guess the word</h2>
-    <p></p>
+    <div class="word">
+        <p>Word You are guessing</p>
+        <p id="template-txt" style="font-size: 40px; letter-spacing: 10px;"></p>
+    </div>
+    <div class = "Stats">
+            <section class= "tries">
+                    <p> Guesses Remaining</p>
+                    <p id = "wins-txt" ></p>
+                </section>
+            <section class= leters>
+                    <p> Letters Guessed</p>
+                    <p id = "letters-txt"></p>
+              </section>
+
+       
+
+        <section class= "wins">
+                <p> Wins</p>
+                <p id = "wins-txt"></p>
+          </section>
+
+        <section class= "losses">
+                <p> Losses</p>
+                <p id = "losses-txt"></p>
+        </section>
+
+               
+
+
+    </div>
 
 
     <script type="text/javascript">
   /*  var abc = "abcdefghijklmnopqrstuvwxyz";
-
 
 var i = 0;
 var wins = 0;
@@ -61,28 +89,60 @@ document.onkeyup = function (event) {
     document.getElementById("losses-txt").innerHTML = "Losses: " + losses;
     document.getElementById("gleft-txt").innerHTML = "Gueses left: " + i;
     document.getElementById("usertr-txt").innerHTML = "Letters guessed so far: " + usertr;
-}*/
+}*/ 
 
 // more to add "grape", "apricot", "cherry", "lemon", "orange", "pineaple", "strawberry", "peach" 
-var listWords = ["apple", "water melon"];
+var listWords = ["ap ple", "water melon"];
 var gameWord;
-var wlength = 0;
+var wLength;
 var template=[];
-var tries = 10
+var tries = 10;
 var guessedLetters = [];
 var wins=0;
+var userLetter = "";
+var losses=0;
+
+
+getWord ();
+document.onkeyup = function (event) {
+    userLetter = event.key;
+    var final=template.join("");
+    console.log (final);
+    if (final == gameWord){
+        wins++;
+        console.log(wins);
+        getWord ();
+    }
+    else if(tries>1){
+        letterFound ();
+    }
+    else{
+        looses++;
+        getWord ();
+    }
+
+}
+
+
+
 
 function getWord(){
+    var template=[];
+    var guessedLetters = [];
+    tries = 10;
     gameWord = listWords [Math.floor(Math.random() * listWords.length)];
     console.log(gameWord);
-    var wLength = gameWord.length;
+    wLength = gameWord.length;
     console.log(wLength);
+    createTemplate ();
 }
 
 
 function createTemplate(){ 
-    var gameWord = "ap ple"; //dummy to work in test only
-    var wLength = 6; // dummy to work in test only
+
+    console.log ( "begin create tempalte");
+    console.log(gameWord);
+    console.log(wLength);
     for(i=0, j=wLength; i<j; i++){
         if(gameWord[i] === " "){
             template.push(" ");
@@ -91,41 +151,46 @@ function createTemplate(){
             template.push("_");
         }
     }
-    console.log(template.join(" "));
+    console.log(template.join(""));
+    document.getElementById("template-txt").innerText = template.join("");
+   
 }
  
 
 function letterFound (){
-    var template = [ "_", "_", " ", "_", "_", "_" ];
+    /*var template = [ "_", "_", " ", "_", "_", "_" ];
     var guessedLetters = [];
     var gameWord = "ap ple"; //dummy to work in test only
     var wLength = 6; // dummy to work in test only
-    var userLetter ="a"// dummy to work in test only
-    
+    var userLetter ="a"// dummy to work in test only*/
+    console.log("begin leeterfound");
+    console.log(template.join(""));
+    console.log(gameWord);
+    console.log(wLength);
+    console.log(userLetter);
     for(i=0, j=wLength; i<j; i++) {
         if(gameWord[i] !=" "){
             if (gameWord[i] == userLetter){
                 console.log("true");
                 template[i]=userLetter;
-                
-                
             }
             else {
                 console.log("false");
+                tries--;
                 
             }
         }
     }
     guessedLetters.push(userLetter);
-    console.log(guessedLetters);
+    console.log(guessedLetters.join(" "));
     console.log(template.join(" "));
+    console.log(tries);
  }
  
  
 
  function itsWin (){
-    var template = [ "a", "_", " ", "p", "l", "e" ];
-    var gameWord = "ap ple"; //dummy to work in test only
+   
     var final=template.join("");
     console.log (final);
     if (final == gameWord){
