@@ -1,0 +1,82 @@
+html {
+    background-image: url("../images/bg2.jpg");
+    background-color: black;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    /* stiky footer
+    height: 90%;
+    width: 100%;
+    max-width: 960px;
+    display: block;
+    margin: auto; */
+}
+h1, h2 {
+    color: greenyellow;
+    text-align: center;
+    font-family: 'Patrick Hand', cursive;
+    font-weight: bold;
+    /* font-family: 'Permanent Marker', cursive;
+    font-family: 'Patrick Hand', cursive;
+    font-family: 'Rock Salt', cursive; */
+}
+/*  Vertical Alignt*/
+
+#outter-div {
+    text-align: center;
+}
+
+/* The ghost, nudged to maintain perfect centering */
+
+#outter-div:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.25em;
+    /* Adjusts for spacing */
+}
+
+/*  Vertical Alignt*/
+
+/* The element to be centered, can
+     also be of any width and height */
+
+.container {
+    /* color: white;
+    margin: auto; */
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    /*  Vertical Alignt The element to be centered, can
+     also be of any width and height */
+    Color: orangered;
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: bold;
+    font-size: 30 px;
+    font-family: 'Indie Flower', cursive;
+}
+
+#template-txt {
+    font-family: 'Rock Salt', cursive;
+    letter-spacing: 10px;
+}
+
+
+#youwin-txt {
+    color: rgb(45, 247, 38);
+    font-size: 50px;
+}
+
+#youloose-txt {
+    color: red;
+    font-size: 50px;
+}
+#tries-txt, #letters-txt{
+    color: yellow;
+}
+
+#wins-txt, #losses-txt{
+    color: rgb(205, 198, 230);
+}
