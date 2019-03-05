@@ -1,18 +1,23 @@
-var listWords = ["ap p'le", "wat'er melon", "yt'a", "s'i"];
-const totalGuess=10
+var listWords = ["staurday night", "be my lover", "it's my life",
+                "mr vain", "tonight's the nigth", "barbie girl",
+                "macarena", "rhythm is a dancer", "show me love",
+                "gonna make you swet", "i'm too sexy", "i like to move it",
+                "we like to party", "another night"];
+                
+const totalGuess=10;
 var gameWord;
 var wLength;
 var template=[];
 var tries = 10;
 var choosenLetters = [];
 var wins=0;
-var userLetter = "";
+var userLetter  = "";
 var losses=0;
 var correctSound = document.createElement("audio");
 var incorrectSound = document.createElement("audio");
 var winSound = document.createElement("audio");
 var looseSound = document.createElement("audio");
-var startSound = new Audio ("assets/sounds/start.mp3");
+var startSound = document.createElement("audio");
 correctSound.setAttribute("src", "assets/sounds/found.mp3");
 incorrectSound.setAttribute("src","assets/sounds/incorrect.mp3");
 winSound.setAttribute("src", "assets/sounds/win.mp3");
@@ -22,17 +27,16 @@ startSound.setAttribute("src", "assets/sounds/start.mp3");
 
 
 getWord ();
+userLetter.toLowerCase();
 document.onkeypress = function (event) {
     userLetter = event.key;
+    userLetter.toLowerCase();
     
+  
   // userLetter.lowerCase();
     letterFound ();
-    console.log(template.join(""));
-    console.log(gameWord);
-      if ((template.join("") == gameWord) && (tries>1)){
-
-        console.log("win");
-        wins++;
+          if ((template.join("") == gameWord) && (tries>1)){
+               wins++;
         winSound.play();
         document.getElementById("youwin-txt").innerHTML = "Awesome!!!";
         setTimeout(getWord,2000);
@@ -90,14 +94,15 @@ function createTemplate(){
             template.push("_");
         }
     }
-    templateEmpty=template
-    document.getElementById("template-txt").innerText = template.join("");
+        document.getElementById("template-txt").innerText = template.join("");
    
 }
  
 
 function letterFound (){
     var t= 0;
+    
+    
     /*var template = [ "_", "_", " ", "_", "_", "_" ];
     var choosenLetters = [];
     var gameWord = "ap ple"; //dummy to work in test only
@@ -112,23 +117,23 @@ function letterFound (){
     for(i=0, j=wLength; i<j; i++) {
         if(gameWord[i] !=" "){
             if (gameWord[i] == userLetter){
+                correctSound.play();
                 template[i]=userLetter;
                 t++;
-                correctSound.play();
+                
             }
             else {
-               incorrectSound.play();
-                console.log("lettra incorrecta");
-                
+                                   
             }
         }
     }
-    choosenLetters.push(userLetter);
+    
+    choosenLetters.push(userLetter.toUpperCase());
 }
 if (t==0) {
       tries--;
-      console.log(template.includes(userLetter)); 
-  }
+      incorrectSound.play(); 
+       }
   
     
     

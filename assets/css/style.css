@@ -77,6 +77,9 @@ h1, h2 {
     color: yellow;
 }
 
-#wins-txt, #losses-txt{
-    color: rgb(205, 198, 230);
+#losses-txt{
+    color: rgb(252, 109, 109);
+}
+#wins-txt{
+    color: rgb(89, 203, 248);
 }
