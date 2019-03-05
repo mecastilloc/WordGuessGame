@@ -83,3 +83,8 @@ h1, h2 {
 #wins-txt{
     color: rgb(89, 203, 248);
 }
+button{ 
+    background-color: hotpink;
+    font-weight: bold;
+    
+}
