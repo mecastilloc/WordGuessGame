@@ -5,21 +5,19 @@ html {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    /* stiky footer
-    height: 90%;
-    width: 100%;
-    max-width: 960px;
-    display: block;
-    margin: auto; */
+    height: 100%;
+}
+
+body{ 
+    margin: auto;
+    max-width: 720px;
 }
 h1, h2 {
     color: greenyellow;
     text-align: center;
     font-family: 'Patrick Hand', cursive;
     font-weight: bold;
-    /* font-family: 'Permanent Marker', cursive;
-    font-family: 'Patrick Hand', cursive;
-    font-family: 'Rock Salt', cursive; */
+  
 }
 /*  Vertical Alignt*/
 
@@ -44,8 +42,6 @@ h1, h2 {
      also be of any width and height */
 
 .container {
-    /* color: white;
-    margin: auto; */
     text-align: center;
     background-color: rgba(0, 0, 0, 0.4);
     /*  Vertical Alignt The element to be centered, can
