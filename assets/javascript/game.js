@@ -1,10 +1,14 @@
 var listWords = ["saturday night", "be my lover", "it's my life",
-    "mr. vain", "tonight's the nigth", "barbie girl",
+    "mr. vain", "tonight's the night", "barbie girl",
     "macarena", "rhythm is a dancer", "show me love",
-    "gonna make you swet", "i'm too sexy", "i like to move it",
+    "gonna make you sweat", "i'm too sexy", "i like to move it",
     "we like to party", "another night","get ready for this",
-    "no limits", "what is love", "run away", "Rhythm of the Night",
-    "i'm the scatman"];
+    "no limits", "what is love", "run away", "rhythm of the night",
+    "i'm the scatman", "pump up the jam", "right in the night",
+    "beach ball", "the night train", "children", "two times",
+    "angel of love", "gimme yourself","u got to let the music",
+    "the summer is magic", "x files", "up and down", "think about the way",
+    "it's a rainy day"];
 const totalTries = 10;
 var gameWord;
 var wLength;
